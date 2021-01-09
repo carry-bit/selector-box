@@ -2,8 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 
 
-
-
 /*
  * SplitChunksPlugin is enabled by default and replaced
  * deprecated CommonsChunkPlugin. It automatically identifies modules which
@@ -29,9 +27,8 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 
 
-
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   plugins: [new webpack.ProgressPlugin()],
 
   module: {
@@ -70,5 +67,14 @@ module.exports = {
       minSize: 30000,
       name: false
     }
-  }
+  },
+
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'selector-box.js',
+    library: 'SelectorBox',
+    libraryTarget: 'umd'
+  },
+
 }
