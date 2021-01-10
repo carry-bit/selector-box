@@ -1,6 +1,6 @@
-# Foobar
+# Selector Box
 
-Foobar is a Python library for dealing with word pluralization.
+A library for creating select boxes with item search capabilities.
 
 ## Installation
 ‍‍‍‍Just add the ‍‍‍‍‍‍‍‍```dist/selector-box.js``` file to your project file.
