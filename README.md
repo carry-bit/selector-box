@@ -41,7 +41,7 @@ SelectorBox.init({
 ```
 
 ## Contributing
-Pull requests are welcome. For major changes.
+Pull requests are welcome.
 
 ## Last word
 Many thanks to those who participate in this project or those who use it :)
