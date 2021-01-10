@@ -24,7 +24,13 @@ export function init(_options) {
     // get search box text
     const _searchBoxText = _options.searchTxt !== undefined ? _options.searchTxt : c.searchBoxDefaultText;
 
-    const _elementProvider = new ElementProvider(_hostElement, _references, _navigatorText, _searchBoxText);
+    // get default selected
+    const _defaultSelected = _options.selected !== undefined ? _options.selected : c.defaultSelectedItem;
+
+    // get custom select box attributes
+    const _customSelectBoxAttributes = _options.selectBoxAttributes !== undefined ? _options.selectBoxAttributes : c.defautlSelectBoxAttributes;
+
+    const _elementProvider = new ElementProvider(_hostElement, _references, _navigatorText, _searchBoxText, _defaultSelected, _customSelectBoxAttributes);
 
     _elementProvider.renderToHost();
 

@@ -1,6 +1,8 @@
 export const navigatorDefaultText = 'Select an item...';
 export const searchBoxDefaultText = 'Search in the list...';
 export const defaultKeyContainerAttributeName = 'value';
+export const defaultSelectedItem = null;
+export const defautlSelectBoxAttributes = null;
 
 // css consts
 export const cssPrefix = 'selector_';

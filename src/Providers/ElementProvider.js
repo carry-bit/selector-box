@@ -3,11 +3,13 @@ import * as c from '../Constants';
 import * as hlp from '../Helpers/Helpers';
 
 class ElementProvider {
-    constructor(_hostElement, _reference, _navigatorText, _searchBoxText) {
+    constructor(_hostElement, _reference, _navigatorText, _searchBoxText, _defaultSelected, _defautlSelectBoxAttributes) {
         this._hostElement = _hostElement;
         this._reference = _reference;
         this._navigatorText = _navigatorText;
         this._searchBoxText = _searchBoxText;
+        this._defaultSelected = _defaultSelected;
+        this._defautlSelectBoxAttributes = _defautlSelectBoxAttributes;
 
         // create select-box
         const _selectBoxObject = this.getSelectBox();
@@ -39,13 +41,31 @@ class ElementProvider {
 
         // add attributes
         _selectBoxParent.addClass(c.cssHided);
+        
+        // add default selected
+        if (this._defaultSelected !== null) {
+            if (this._defaultSelected.key !== undefined && this._defaultSelected.value !== undefined) {
+                _selectBoxParent.render().value = this._defaultSelected.key;
+                _selectBoxParent.addAttribute('data-value', this._defaultSelected.value);
+            }
+        }
 
+        // add custom select box attributes
+        if(this._defautlSelectBoxAttributes !== null) {
+            if (typeof this._defautlSelectBoxAttributes === 'object') {
+                for(let key in this._defautlSelectBoxAttributes) {
+                    const value = this._defautlSelectBoxAttributes[key];
+
+                    _selectBoxParent.addAttribute(key, value);
+                }
+            }
+        }
 
         return {
             selectBoxParent: _selectBoxParent,
             selectBoxChildren: _selectBoxChildrenElements
         };
-    }   
+    }
 
     // create and return ul(selectable list) and list-items(li)
     getSelectList() {
@@ -70,6 +90,9 @@ class ElementProvider {
         _navigator.addClass(c.cssNavigator);
 
         _navigator.text(this._navigatorText);
+
+        if(this._selectBox.getAttribute('data-value') !== false)
+            _navigator.text(this._selectBox.getAttribute('data-value'));
 
         return _navigator;
     }

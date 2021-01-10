@@ -1,92 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selector Box</title>
 </head>
+
 <body>
 
-    <div id="selectorHost"></div>
-    
+    <div id="root"></div>
+
     <script src="selector-box.js"></script>
     <script>
-        const arr = [
-    {
-        key: '326',
-        value: 'آقائی - محمدصالح'
-    },
-    {
-        key: '1354',
-        value: 'آقاجانلو-فرزانه'
-    },
-    {
-        key: '359',
-        value: 'آقاجانلو-جلیل'
-    },
-    {
-        key: '1354',
-        value: 'آقاجانلو-فرزانه'
-    },
-    {
-        key: '359',
-        value: 'آقاجانلو-جلیل'
-    },
-    {
-        key: '1354',
-        value: 'آقاجانلو-فرزانه'
-    },
-    {
-        key: '359',
-        value: 'آقاجانلو-جلیل'
-    },
-    {
-        key: '1354',
-        value: 'آقاجانلو-فرزانه'
-    },
-    {
-        key: '359',
-        value: 'آقاجانلو-جلیل'
-    },
-    {
-        key: '1354',
-        value: 'آقاجانلو-فرزانه'
-    },
-    {
-        key: '359',
-        value: 'آقاجانلو-جلیل'
-    },
-    {
-        key: '1354',
-        value: 'آقاجانلو-فرزانه'
-    },
-    {
-        key: '359',
-        value: 'آقاجانلو-جلیل'
-    },
-    {
-        key: '1354',
-        value: 'آقاجانلو-فرزانه'
-    },
-    {
-        key: '359',
-        value: 'آقاجانلو-جلیل'
-    },
-
-    {
-        key: '323',
-        value: 'افشین جو -لیلا'
-    }
-    
-];
+        const refArray = [{
+            key: '0',
+            value: 'Sample Item'
+        }, ];
 
 
-SelectorBox.init({
-    el: 'selectorHost',
-    ref: arr,
-    navTxt: "نام استاد مورد نظر را انتخاب کنید",
-    searchTxt: "قسمتی از نام استاد را وارد کنید"
-})
+        SelectorBox.init({
+            el: 'root',
+            ref: refArray,
+            navTxt: "Select an item",
+            searchTxt: "Search item...",
+            selected: {
+                key: '0',
+                value: 'Sample Item'
+            },
+            selectBoxAttributes: {
+                name: 'selector_box',
+                id: 'selectorBox'
+            }
+        })
     </script>
 </body>
+
 </html>
