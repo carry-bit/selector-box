@@ -1,8 +1,8 @@
 {
-  "name": "my-webpack-project",
+  "name": "selector-box",
   "version": "1.0.0",
-  "description": "My webpack project",
-  "main": "dist/webpack-numbers.js",
+  "description": "Selector Box",
+  "main": "dist/selector-box.js",
   "module": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,16 +10,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "searchable-select-box"
+    "url": "selector-box"
   },
   "keywords": [
     "search",
     "searchable",
     "selectbox",
+    "selectorBox",
     "select",
     "box",
     "select-box",
-    "searchable-select-box"
+    "selector-box"
   ],
   "author": "Sajjad Anghooty",
   "license": "ISC",

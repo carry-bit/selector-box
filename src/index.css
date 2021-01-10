@@ -1,0 +1,106 @@
+.selector_container,
+.selector_container * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* Selector Container */
+.selector_container {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+/* Selector Navigator */
+.selector_navigator {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    padding: 15px 30px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    width: 300px;
+}
+
+.selector_navigator::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid #555;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+    transition: 0.3s transfrom;
+}
+
+.selector_navigator.selector_expand-list::after {
+    transform: translateY(-50%) rotate(180deg) !important;
+}
+
+/* Selector Select List */
+.selector_select-list {
+    width: 100%;
+    padding: 5px 0;
+    margin-top: 10px !important;
+    box-shadow: 0px 0px 7px rgba(0,0,0,0.2);
+    list-style: none;
+    text-align: right;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    transition: 0.5s opacity;
+    overflow-y: scroll;
+    height: 300px;
+    opacity: 1;
+    visibility: visible;
+    margin-top: 20px;
+}
+
+.selector_select-list > li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.selector_select-list > li:hover,
+.selector_select-list > li.active {
+    background-color: rgba(0,0,0,0.1);
+}
+
+/* Selector Search Box Container */
+.selector_search-box-container {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.selector_search-box-container > input {
+    display: block;
+    width: 100%;
+    direction: rtl;
+    outline: none;
+    padding: 10px 10px;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    border-radius: 0.3rem;
+}
+
+.selector_search-box-container:hover {
+    background-color: #fff !important;
+    cursor: default;
+}
+
+/* Selector Hided */
+.selector_hided {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    background-color: white;
+}
+
+/* Selector Selected Item */
+.selector_selected-item {
+    background-color: rgba(0,0,0,0.1);
+}
